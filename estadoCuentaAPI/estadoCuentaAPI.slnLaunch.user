@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "estadoCuentaAPI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\estadoCuentaUI\\estadoCuentaUI.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

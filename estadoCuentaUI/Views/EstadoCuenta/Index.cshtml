@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Estado de Cuenta";
+}
+<h2 class="text-center">Estado de Cuenta</h2>
+<div class="d-flex justify-content-end">
+    <div style="margin-right: 1%;">
+        <button class="btn btn-success btn-sm" onclick="obtenerPDF()">Descargar</button>
+    </div>
+</div>
+
+
+<div class="container">
+    <!-- Fila 1: Datos del titular -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <label for="nombreTitular">Nombre Titular</label>
+            <input type="text" readonly id="nombreTitular" class="form-control" />
+        </div>
+        <div class="col-md-6">
+            <label for="tarjeta">Número de tarjeta</label>
+            <input type="text" readonly id="tarjeta" class="form-control" />
+        </div>
+    </div>
+
+    <!-- Fila 2: Información de saldos -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <label for="disponible">Saldo Disponible</label>
+            <input type="text" readonly id="disponible" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <label for="utilizado">Saldo Utilizado</label>
+            <input type="text" readonly id="utilizado" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <label for="limiteCredito">Límite Crédito</label>
+            <input type="text" readonly id="limiteCredito" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <label for="fechaCorte">Fecha Corte</label>
+            <input type="text" readonly id="fechaCorte" class="form-control" />
+        </div>
+    </div>
+
+    <!-- Fila 3: Tabla de movimientos -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="divTabla p-3 bg-white rounded shadow-sm">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Fecha Movimiento</th>
+                            <th>Descripción</th>
+                            <th>Monto</th>
+                            <th>Tipo Movimiento</th>
+                        </tr>
+                    </thead>
+                    <tbody id="estadoCuentaTable">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fila 4: Información de montos en dos columnas -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="p-3 bg-light rounded shadow-sm">
+                <label for="montoTotalComprasMesActual">Monto Total Compras Mes Actual</label>
+                <input type="text" readonly id="montoTotalComprasMesActual" class="form-control" />
+
+                <label for="interesBonificable">Interés Bonificable</label>
+                <input type="text" readonly id="interesBonificable" class="form-control" />
+
+                <label for="montoTotalPagar">Monto Total a Pagar</label>
+                <input type="text" readonly id="montoTotalPagar" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-3 bg-light rounded shadow-sm">
+                <label for="montoTotalComprasMesAnterior">Monto Total Compras Mes Anterior</label>
+                <input type="text" readonly id="montoTotalComprasMesAnterior" class="form-control" />
+
+                <label for="cuotaMinima">Cuota Mínima</label>
+                <input type="text" readonly id="cuotaMinima" class="form-control" />
+
+                <label for="montoContadoConIntereses">Monto Contado Con Intereses</label>
+                <input type="text" readonly id="montoContadoConIntereses" class="form-control" />
+            </div>
+        </div>
+    </div>
+</div>
+

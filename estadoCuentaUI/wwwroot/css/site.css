@@ -1,0 +1,97 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 85%;
+    margin: auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Secciones con estilos */
+.divDatos, .divSaldos, .divTabla, .divMontos {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Secciones con espacios */
+.divDatos, .divSaldos {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Estilo para etiquetas */
+label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Estilos de los inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Estilo para la tabla */
+.divTabla {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Sección de montos en dos columnas */
+.divMontos {
+    display: flex;
+    gap: 20px;
+}
+
+.montosColumna {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+    }
+
+    .divDatos, .divSaldos, .divMontos {
+        flex-direction: column;
+    }
+}

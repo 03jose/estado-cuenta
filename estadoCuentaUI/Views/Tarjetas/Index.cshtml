@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Lista de Tarjetas";
+}
+<h2>Lista de Tarjetas</h2>
+
+<input type="hidden" id="Id" value="0" />
+<div class="d-flex justify-content-end">
+    <div style="margin-right: 1%;">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-secondary btn-sm">Atras</a>
+    </div>
+    
+    <button id="abrirModalBtn" class="btn btnbtn btn-success btn-sm">
+        Nueva tarjeta
+    </button>
+
+</div>
+
+<div id="modalContainer"></div>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Número</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody id="tarjetasTable">
+    </tbody>
+</table>
+
+<script src="~/js/tarjetas.js?v=@DateTime.Now.Ticks"></script>
+
+<script src="~/js/estadoCuenta.js?v=@DateTime.Now.Ticks"></script>
+<script src="~/js/descargas.js?v=@DateTime.Now.Ticks"></script>
+<script src="~/js/historial.js?v=@DateTime.Now.Ticks"></script>
+

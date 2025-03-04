@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "UJiGECzfti/NATf2dNhsnUWNZt3GagmYEHpuzr5g8sA=",
+  "Source": "estadoCuentaAPI",
+  "BasePath": "_content/estadoCuentaAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Historial de Transacciones";
+
+}
+<h2>Historial de Transacciones</h2>
+<input type="hidden"  id="Id" value="@ViewBag.Id"/>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Descripción</th>
+            <th>Monto</th>
+            <th>Tipo</th>
+        </tr>
+    </thead>
+    <tbody id="historialTable">        
+    </tbody>
+</table>
+
+

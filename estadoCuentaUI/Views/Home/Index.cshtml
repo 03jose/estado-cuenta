@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Pagina Inicio ";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido</h1>
+    
+    
+</div>
+
+
+<div>
+    <h2>Seleccione la opcion que desea hacer:</h2>
+    <ul>
+        <li><p>Agregar un cliente haga click en <a href="javascript:void(0);" id="agregarClienteModal">Aqui</a></p></li>
+        
+        <li>
+            <p>
+                Para ver el listado de todas las Tarjetas haga click en
+                <a href="@Url.Action("Index", "Tarjetas")">aquí</a>.
+            </p>
+        </li>
+    </ul>
+</div>
+
+
+<script src="~/js/cliente.js"></script>

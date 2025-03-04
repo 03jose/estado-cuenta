@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "a93bdeeb-e944-46e0-afa9-41d45527748c",
+		"name": "estadoCuenta",
+		"description": "prueba de las apis del proyecto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "5271107"
+	},
+	"item": [
+		{
+			"name": "cliente",
+			"item": [
+				{
+					"name": "crear",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"clienteId\": 0, // dejaar en 0 ya que es un nuevo registro\r\n  \"nombre\": \"Pedro\", // nombre del cliente\r\n  \"apellido\": \"Picapiedra\", //apellido del cliente\r\n  \"dui\": \"05045678-9\" //Dui del cliente\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/Cliente/crear"
+					},
+					"response": []
+				},
+				{
+					"name": "obtener cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/Cliente/{{clienteId}}"
+					},
+					"response": []
+				}
+			],
+			"description": "crear u obtener informacion del cliente"
+		},
+		{
+			"name": "Tarjeta de credito",
+			"item": [
+				{
+					"name": "obtener lista de tarjetas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/TarjetaCredito/ObtenerListaTarjetas"
+					},
+					"response": []
+				},
+				{
+					"name": "crear relacion tarjeta-cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tarjetaCreditoId\": 0, // ID de la tarjeta, dejar en 0 porque se crea al guardar la informacion\r\n  \"clienteId\": 2, // ID del cliente al que se le asignara la tarjeta\r\n  \"numeroTarjeta\": \"4123456789012345\", // numero de la tarjeta 16 digitos\r\n  \"limiteCredito\": 500, // monto limite que tendra la tarjeta\r\n  \"saldoUtilizado\": 0, // al ser nueva la tarjeta dejarla en 0\r\n  \"tasaInteres\": 5, // numero que sera la tasa de interes de la tarjeta\r\n  \"fechaCorte\": \"2025-03-03T22:15:20.574Z\", // fecha de corte para la tarjeta\r\n  \"fechaPago\": \"2025-03-07T22:15:20.574Z\" // fecha de pago de la tarjeta\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/TarjetaCredito/AgregarTarjtetaCliente"
+					},
+					"response": []
+				}
+			],
+			"description": "obtener lista de tarjetas o crear una relacion entre cliente y tarjeta"
+		},
+		{
+			"name": "transacciones",
+			"item": [
+				{
+					"name": "compra",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tarjetaCreditoId\": 1,\r\n  \"fechaMovimiento\": \"2025-03-03T22:05:17.530Z\",\r\n  \"descripcion\": \"compra supermercado\",\r\n  \"monto\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/Movimiento/RegistrarCompra"
+					},
+					"response": []
+				},
+				{
+					"name": "pago",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tarjetaCreditoId\": 1,\r\n  \"FechaPago\": \"2025-03-03T22:05:17.530Z\",\r\n  \"descripcion\": \"pago supermercado\",\r\n  \"monto\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/Movimiento/RegistrarPago"
+					},
+					"response": []
+				}
+			],
+			"description": "realizar compra o pago de una tarjeta"
+		},
+		{
+			"name": "exportar documentos",
+			"item": [
+				{
+					"name": "exportar pdf",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/Export/ExportarEstadoCuentaPDF/{{tarjetaCreditoId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "exportar Excel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Export/ExportarComprasExcel?tarjetaCreditoId=1&fechaInicio=02/01/2025&fechaFin=03/01/2025",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Export",
+								"ExportarComprasExcel"
+							],
+							"query": [
+								{
+									"key": "tarjetaCreditoId",
+									"value": "1",
+									"description": "Id de tarjeta de credito a consultar"
+								},
+								{
+									"key": "fechaInicio",
+									"value": "02/01/2025",
+									"description": "Fecha de inicio de la consulta (formato MM/dd/yyyy)"
+								},
+								{
+									"key": "fechaFin",
+									"value": "03/01/2025",
+									"description": "fecha de fin de la consulta (formato MM/dd/yyyy)"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "historial",
+			"item": [
+				{
+					"name": "obtener historial por tarjeta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/HistorialTransacciones/historialTransacciones/{{tarjetaCreditoId}}"
+					},
+					"response": []
+				}
+			],
+			"description": "historial de la tarjeta"
+		},
+		{
+			"name": "estado de cuenta",
+			"item": [
+				{
+					"name": "obtener estado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/EstadoCuenta/ObtenerEstadoCuenta/{{tarjetaCreditoId}}"
+					},
+					"response": []
+				}
+			],
+			"description": "estado de cuenta de una tarjeta"
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://localhost:7049/health"
+			},
+			"response": []
+		}
+	]
+}

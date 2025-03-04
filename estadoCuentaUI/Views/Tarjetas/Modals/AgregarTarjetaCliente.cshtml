@@ -1,0 +1,48 @@
+﻿<!-- Modal.js -->
+<div class="modal fade" id="modalTarjeta" tabindex="-1" aria-labelledby="modalTarjetaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTarjetaLabel">Crear Nueva Tarjeta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formTarjeta">
+                    <div class="mb-3">
+                        <label for="numeroTarjeta" class="form-label">Número de Tarjeta</label>
+                        <input type="text" class="form-control" id="numeroTarjeta" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="limiteCredito" class="form-label">Límite de Crédito</label>
+                        <input type="number" class="form-control" id="limiteCredito" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="dui" class="form-label">Dui del cliente</label>
+                        <input type="number" class="form-control" id="dui" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tasaInteres" class="form-label">Tasa de Interés</label>
+                        <input type="number" class="form-control" id="tasaInteres" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaCorte" class="form-label">Fecha de Corte</label>
+                        <input type="date" class="form-control" id="fechaCorte" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaPago" class="form-label">Fecha de Pago</label>
+                        <input type="date" class="form-control" id="fechaPago" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary btn-sm" id="GuardarInfoClienteTarjeta">Guardar</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/tarjetas.js"></script>
