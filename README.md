@@ -1,5 +1,12 @@
 # estado-cuenta
 La aplicación debe permitir visualizar el estado de cuenta de una tarjeta de  crédito, incluyendo el detalle de movimientos, cálculo de cuota mínima, cálculo de contado e interés  bonificable, y mostrar el saldo utilizado y disponible de la tarjeta de crédito. 
+
+Carpetas principales:
+1-  Documentacion que contiene los scripts de la base, el documento de word explicando la arquitectura y el postman collection con la prueba 
+2-  La API o backend en un proyecto
+3-  La UI o frontend en un proyecto ambos en la misma solucion
+
+
 #	Elaborado por: Jose Ricardo Martinez Ruano
 
 ##  Instalación ### 
