@@ -5,8 +5,8 @@ La aplicación debe permitir visualizar el estado de cuenta de una tarjeta de  c
 ##  Instalación ### 
 Requisitos previos Antes de comenzar, asegúrate de tener instalado lo siguiente: 
   - [.NET SDK](https://dotnet.microsoft.com/download) 
-	- [SQL Server](https://www.microsoft.com/es-es/sql-server/sql-server-downloads) 
-	- [Postman (Opcional)](https://www.postman.com/downloads/) para probar la API. 
+  - [SQL Server](https://www.microsoft.com/es-es/sql-server/sql-server-downloads) 
+  - [Postman (Opcional)](https://www.postman.com/downloads/) para probar la API. 
 
 ### Clonar el repositorio ###
 	sh git clone https://github.com/03jose/estado-cuenta.git cd estado-cuenta
